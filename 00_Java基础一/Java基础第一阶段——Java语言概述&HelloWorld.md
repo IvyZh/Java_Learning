@@ -17,3 +17,13 @@
 ---
 
 * 学习视频：毕向东35天Java基础_毕向东
+
+
+视频目录：
+
+![视频目录][1]
+
+
+  [1]: https://github.com/IvyZh/Java_Learning/blob/master/00_Java%E5%9F%BA%E7%A1%80%E4%B8%80/imgs/QQ%E6%88%AA%E5%9B%BE20161120183500.png
+  
+  视频时长：3小时03分钟
