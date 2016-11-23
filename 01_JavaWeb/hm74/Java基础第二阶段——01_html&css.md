@@ -11,7 +11,7 @@ Tags ：Html CSS
 
 * 视频目录：
 
-![](https://github.com/IvyZh/Java_Learning/blob/master/00_Java%E5%9F%BA%E7%A1%80%E4%B8%80/imgs/QQ%E6%88%AA%E5%9B%BE20161123004200.png)
+![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/hm74/imgs/QQ%E6%88%AA%E5%9B%BE20161123004200.png)
 
   
 * 视频时长：4小时32分钟
@@ -28,7 +28,7 @@ Tags ：Html CSS
 	* 标记语言：由标记(标签)构成的语言，如html、xml
 * 解释
 
-![](https://github.com/IvyZh/Java_Learning/blob/master/00_Java%E5%9F%BA%E7%A1%80%E4%B8%80/imgs/QQ%E6%88%AA%E5%9B%BE20161123005146.png)
+![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/hm74/imgs/QQ%E6%88%AA%E5%9B%BE20161123005146.png)
 
 ## 02-HTML的Hello world
 
