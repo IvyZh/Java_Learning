@@ -11,7 +11,7 @@ Tags ：Html 标签
 
 先总体的截下课程目录的图：
 
-![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/hm74/imgs/QQ%E6%88%AA%E5%9B%BE20161123004200.png)
+![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/%E5%B9%BF%E9%99%B5%E6%95%A3/imgs/QQ%E6%88%AA%E5%9B%BE20161123121026.png)
 
 
 > 接下来开始第一天的学习了
@@ -22,7 +22,7 @@ Tags ：Html 标签
 
 * 视频目录：
 
-![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/hm74/imgs/QQ%E6%88%AA%E5%9B%BE20161123004200.png)
+![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/%E5%B9%BF%E9%99%B5%E6%95%A3/imgs/QQ%E6%88%AA%E5%9B%BE20161123121121.png)
 
   
 * 视频时长：4小时24分钟
