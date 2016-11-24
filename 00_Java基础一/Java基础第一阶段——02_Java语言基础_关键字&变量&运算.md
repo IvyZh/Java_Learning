@@ -225,3 +225,104 @@ Ipv4 Ipv6
 ## 12-Java语言基础(字符类型运算过程)
 
 	sop('a' + 1);// 输出结果 98
+
+* ASCII
+* GB2312
+* GBK
+* GB18130
+* ...
+
+> Java本身内置了Unicode国际码表
+
+
+
+## 13-Java语言基础(类型运算细节)
+
+
+Demo1:
+
+	byte b = 4;
+	
+	b = 3 + 7;
+	
+	sop(b);// 编译 运行都ok
+
+Demo2：
+
+	byte b = 4;
+	byte b1  = 3;
+	byte b2 = 7;
+	b = b1 + b2；
+	sop(b);// 编译报错
+
+
+Demo3:
+	
+	int x = 1;
+	int x1 = 10;
+	int x2 = 98;
+	x = x1 + x2;
+	sop(x);// 编译 运行都ok
+
+Demo4:
+
+	int x = 1;
+	int x1 = Integer.MAX_VALUE;
+	int x2 = 2;
+	x = x1 + x2;
+	sop(x);// (-2147483647)编译 运行都ok 思考计算过程
+
+
+## 14-Java语言基础(算术运算符_1)
+
+> `+ - * / %`
+
+	5 % 2 = 1
+	-5 % 2 = -1
+	5 % -1 = 1
+
+连接符：
+
+	sop("5+5="+5+5);//5+5=55 
+
+## 15-Java语言基础(算术运算符_2&赋值运算符)
+
+> `++ --`  
+
+Demo1:
+
+	int a = 3,b;
+	b = a++;
+	sop(a+","+b);
+
+
+Demo2:
+
+	int i = 3;
+	i = i++;
+	sop(i);// 结果：3
+
+![](https://github.com/IvyZh/Java_Learning/blob/master/00_Java%E5%9F%BA%E7%A1%80%E4%B8%80/imgs/QQ%E6%88%AA%E5%9B%BE20161122151217.png)
+
+
+> `= += -= /= *= %=`
+
+
+Demo4:
+
+	short s = 3;
+	s+=4;// 底层会做了自动转换
+	sop(s);//结果：7
+
+
+Demo5:
+
+	short s = 3;
+	s = s + 4;
+	sop(s);//编译报错：可能损失精度
+
+
+
+---
+
+Day01 End.
