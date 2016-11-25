@@ -318,10 +318,20 @@ Tags ：Html 标签
 * tr属性
 	* align：left right center
 
-> 使用th也可以表示单元格：自带居中和加粗效果
+> 使用`th`也可以表示单元格：自带居中和加粗效果
 
 ## 12-表格标签二
+
+* 单元格合并（td的属性
+	* rowspan：跨行
+	* colspan：跨列
 ## 13-上午内容总结
+
+重点：
+
+![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/%E5%B9%BF%E9%99%B5%E6%95%A3/imgs/QQ%E6%88%AA%E5%9B%BE20161124010624.png)
+
+
 ## 14-表单标签一
 ## 15-表单标签二
 ## 16-案例使用表单标签实现注册的页面
