@@ -29,14 +29,196 @@
 > 倒序遍历
 
 ## 03-Java基础(数组-常见操作-最值)
+
+* 两种方式
+	* 取脚标index
+	* 取值element
 ## 04-Java基础(数组-常见操作-选择排序)
+
+* 排序
+	* 选择排序
+	* 冒泡排序
+
+
+- 选择排序
+	> 选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理是每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法（比如序列[5， 5， 3]第一次就将第一个[5]与[3]交换，导致第一个5挪动到第二个5后面）。
+
+
+code:
+
+
+![](https://github.com/IvyZh/Java_Learning/blob/master/00_Java%E5%9F%BA%E7%A1%80%E4%B8%80/imgs/QQ%E6%88%AA%E5%9B%BE20161128152700.png)
+
 ## 05-Java基础(数组-常见操作-冒泡排序)
+
+
+- 冒泡排序
+	- 比较相邻的元素。如果第一个比第二个大，就交换他们两个。
+	- 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。
+	- 针对所有的元素重复以上的步骤，除了最后一个。
+	- 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。
+
+
+code:
+
+![](https://github.com/IvyZh/Java_Learning/blob/master/00_Java%E5%9F%BA%E7%A1%80%E4%B8%80/imgs/QQ%E6%88%AA%E5%9B%BE20161128154638.png)
+
+
+> Java类中自带的排序：Arrays.sort(arr);
+
+> 最快的排序：希尔排序
+
 ## 06-Java基础(数组-常见操作-排序位置置换代码提取)
+
+抽取swap方法：交换数组中两个数据的位置swap(int[] arr,int x,int y)
+
 ## 07-Java基础(数组-排序的性能问题)
+
+
+	public static void selectSort(int[]a)
+	{
+	    if((a==null)||(a.length==0))
+	        return;
+		int minIndex=0;
+	    int temp=0;// 可以改为temp = a[0];
+	    for(int i=0;i<a.length-1;i++)
+	    {
+	        minIndex=i;//无序区的最小数据数组下标
+	        for(intj=i+1;j<a.length;j++)
+	        {
+	            //在无序区中找到最小数据并保存其数组下标
+	            if(a[j]<a[minIndex])
+	            {
+	                minIndex=j;
+	            }
+	        }
+	        if(minIndex!=i)
+	        {
+	            //如果不是无序区的最小值位置不是默认的第一个数据，则交换之。
+	            temp=a[i];
+	            a[i]=a[minIndex];
+	            a[minIndex]=temp;
+	        }
+	    }
+	}
+
+code:
+
+![](https://github.com/IvyZh/Java_Learning/blob/master/00_Java%E5%9F%BA%E7%A1%80%E4%B8%80/imgs/QQ%E6%88%AA%E5%9B%BE20161128160955.png)
+
 ## 08-Java基础(数组-常见功能-查找)
+
+- 基础：for循环实现+判断
+
 ## 09-Java基础(数组-常见功能-折半查找)
+
+> 二分查找又称折半查找，优点是比较次数少，查找速度快，平均性能好；其缺点是要求待查表为有序表，且插入删除困难。因此，折半查找方法适用于不经常变动而查找频繁的有序列表。首先，假设表中元素是按升序排列，将表中间位置记录的关键字与查找关键字比较，如果两者相等，则查找成功；否则利用中间位置记录将表分成前、后两个子表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一子表。重复以上过程，直到找到满足条件的记录，使查找成功，或直到子表不存在为止，此时查找不成功。
+
 ## 10-Java基础(数组-常见功能-折半查找练习)
+
+code:
+
+	public static int halfSearch(int[] arr,int key)
+	{
+		int max,min,mid;
+		min = 0;
+		max = arr.length-1;
+		mid = (max+min)/2;
+		
+		while(arr[mid]!=key)
+		{
+			if(key>arr[mid])
+				min = mid + 1;
+			else if(key<arr[mid])
+				max = mid - 1;
+
+			if(max<min)
+				return -1;
+
+			mid = (max+min)/2;
+		}
+		return mid;
+	}
+
+code2:
+
+	public static int halfSearch_2(int[] arr,int key)
+	{
+		int max,min,mid;
+		min = 0;
+		max = arr.length-1;
+
+		while(min<=max)
+		{
+			mid = (max+min)>>1;
+
+			if(key>arr[mid])
+				min = mid + 1;
+			else if(key<arr[mid])
+				max = mid - 1;
+			else
+				return mid;
+		}
+		return -1;
+	}
+
+
+> 给定一个有序的数组，如果往该数组中存储一个元素，并保证这个数组还是有序的，
+那么个元素的存储的角标为如何获取。
+{13,15,19,28,33,45,78,106};
+
+
+code1:
+
+	public static int halfSearch_2(int[] arr,int key)
+	{
+		int max,min,mid;
+		min = 0;
+		max = arr.length-1;
+
+		while(min<=max)
+		{
+			mid = (max+min)>>1;
+
+			if(key>arr[mid])
+				min = mid + 1;
+			else if(key<arr[mid])
+				max = mid - 1;
+			else
+				return mid;
+		}
+		return min;
+	}
+
+> int index = Arrays.binarySearch(arr,45);//如果存在返回的具体的角标位置，不存在返回的是  -插入点-1
+
+
+	public static int halfSearch_2(int[] arr,int key)
+	{
+		int max,min,mid;
+		min = 0;
+		max = arr.length-1;
+
+		while(min<=max)
+		{
+			mid = (max+min)>>1;
+
+			if(key>arr[mid])
+				min = mid + 1;
+			else if(key<arr[mid])
+				max = mid - 1;
+			else
+				return mid;
+		}
+		return -min-1;//如果存在返回的具体的角标位置，不存在返回的是  -插入点-1
+	}
+
+
+
 ## 11-Java基础(进制转换_1)
+
+> 获取一个整数的16进制表现形式。
+
 ## 12-Java基础(进制转换_2-查表法)
 ## 13-Java基础(进制转换_整合)
 ## 14-Java基础(查表法练习)
