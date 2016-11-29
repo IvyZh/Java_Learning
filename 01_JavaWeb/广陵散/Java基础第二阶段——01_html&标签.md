@@ -308,6 +308,10 @@ Tags ：Html 标签
 		* caption ：写在table里面，表示表格的标题
 	* 定义一行使用 tr
 	* 定义一个单元格使用 td
+	
+
+> 操作技巧：首先数有多少行 ，数每行里面有多少个单元格
+
 
 * table属性
 	* border="1" 表格线
@@ -324,7 +328,12 @@ Tags ：Html 标签
 
 * 单元格合并（td的属性
 	* rowspan：跨行
+		* `<td rowspan="3">人员信息</td>`
 	* colspan：跨列
+		* `<td colspan="3">人员信息</td>`
+
+
+
 ## 13-上午内容总结
 
 重点：
@@ -332,7 +341,66 @@ Tags ：Html 标签
 ![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/%E5%B9%BF%E9%99%B5%E6%95%A3/imgs/QQ%E6%88%AA%E5%9B%BE20161124010624.png)
 
 
+---
+下午。
+
 ## 14-表单标签一
+
+1. 表单标签是什么？能做什么？怎么做？
+	1. 可以提交数据到开心网的服务器，这个过程可以使用表单标签实现
+
+![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/%E5%B9%BF%E9%99%B5%E6%95%A3/imgs/QQ%E6%88%AA%E5%9B%BE20161130013552.png)
+
+
+* 表单标签
+	* `<form></form>`: 定义一个表单的范围
+	* `<input type="输入项的类型"/>`：可以输入内容或者选择内容的部分,**在输入项里面需要有一个name属性**
+		* `<input type="输入项的类型"/>`
+			* `<input type="text"/>`
+			* `<input type="password"/>`
+			* `<input type="radio"/>`
+				* 在里面需要属性 **name**，name的属性值必须要相同
+				* 必须有一个**value**值
+				* 实现默认选中的属性 `checked="checked"`
+			* `<input type="checkbox"/>`
+				* 在里面需要属性 name，name的属性值必须要相同
+				* 必须有一个value值
+				* 实现默认选中的属性 `checked="checked"`
+			* `<input type="file"/>`
+	* `<select name="birth">`：下拉输入项（不是在input标签里面的）
+		* 默认选择:`selected="selected"`
+	
+				<select name="birth">
+					<option value="1991">1991</option>
+					<option value="1992">1992</option>
+					<option value="1993">1993</option>
+				</select>
+
+	* `<textarea cols="10" rows="10"></textarea>`：文本域
+	* `<input type="hidden" />` : 隐藏项（不会显示在页面上，但是存在于html代码里面,具体应用呢？）
+	* `<input type="submit" value="注册"/>` ：提交按钮
+
+
+			- file:///C:/Users/asus/Desktop/0413/day01/code/10-表单标签一.html
+			 ?sex=on&love=on&love=on&birth=1991
+			
+			当在输入项里面写了name属性之后 
+			- file:///C:/Users/asus/Desktop/0413/day01/code/10-表单标签一.html
+			?phone=2222&pwd=3333&sex=on&love=on&birth=1993&tex=aaaaaaaa&hid=
+
+
+			- file:///C:/Users/asus/Desktop/0413/day01/code/10-表单标签一.html?
+			phone=130111111&pwd=123456&sex=nv&love=y&love=p&love=pp&birth=1992&tex=good+love&hid=
+
+			** ?输入项name的值=输入的值&
+			** 参数类似于key-value形式
+
+> 如果不设置form表单的action，那么数据就会提交到当前页面
+
+- `<form></form>`: 定义一个表单的范围
+	- 属性
+		- action： 提交到地址，默认提交到当前的页面，`<form action='01-hello.html'></form>`
+
 ## 15-表单标签二
 ## 16-案例使用表单标签实现注册的页面
 ## 17-其他标签的使用
