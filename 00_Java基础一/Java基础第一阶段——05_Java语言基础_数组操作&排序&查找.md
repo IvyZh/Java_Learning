@@ -219,9 +219,189 @@ code1:
 
 > 获取一个整数的16进制表现形式。
 
+code1:
+
+	public static void toHex(int num)
+	{
+
+		for(int x=0; x<8; x++)
+		{
+			int temp = num & 15;
+			if(temp>9)
+				System.out.print((char)(temp-10+'A'));
+			else
+				System.out.print(temp);
+			num = num >>> 4;
+		}
+		/*
+		int n1 = num & 15;
+		System.out.println("n1="+n1);
+
+		num = num >>> 4;
+		int n2 = num & 15;
+		System.out.println("n2="+n2);
+		*/
+	}
+
+
 ## 12-Java基础(进制转换_2-查表法)
+
+
+	什么时候使用数组呢？
+	如果数据出现了对应关系，而且对应关系的一方是有序的数字编号。并作为角标使用。
+	这时就必须要想到数组的使用。
+	
+	就可以将这些数据存储到数组中。 
+	根据运算的结果作为角标直接去查数组中对应的元素即可。
+
+	这种方式：称为查表法。
+
+
+code2:
+
+	public static void toHex_2(int num)
+	{
+
+		if(num==0)
+		{
+			System.out.println("0");
+			return ;
+		}
+		//定义一个对应关系表。
+		char[] chs = {'0','1','2','3',
+						'4','5','6','7',
+						'8','9','A','B',
+						'C','D','E','F'};
+		/*
+		一会查表会查到比较的数据。
+		数据一多，就先存储起来，在进行操作。
+		所以定义一个数组。 临时容器。
+		*/
+		char[] arr = new char[8];
+		int pos = arr.length;
+
+		while(num!=0)
+		{
+			int temp = num&15;
+			arr[--pos] = chs[temp];
+			num  = num >>> 4;
+		}
+
+		System.out.println("pos="+pos);
+		for(int x=pos ;x<arr.length; x++)
+		{
+			System.out.print(arr[x]);
+		}
+
+
+	}
+
+
 ## 13-Java基础(进制转换_整合)
+
+> 二进制 八进制 十六进制
+
+
+	class ArrayTest3 
+	{
+		public static void main(String[] args) 
+		{
+	//		toHex(26);
+			toBinary(-6);// 注意负数
+	//		toOctal(26);
+			System.out.println(Integer.toBinaryString(-6));
+		}
+	
+		//十进制-->十六进制。
+		public static void toHex(int num)
+		{
+			trans(num,15,4);
+		}
+		//十进制-->二进制。
+		public static void toBinary(int num)
+		{
+			trans(num,1,1);
+		}
+		//十进制-->八进制。
+		public static void toOctal(int num)
+		{
+			trans(num,7,3);
+		}
+	
+		public static void trans(int num,int base,int offset)
+		{
+	
+			if(num==0)
+			{
+				System.out.println("0");
+				return ;
+			}
+			//定义一个对应关系表。
+			char[] chs = {'0','1','2','3',
+							'4','5','6','7',
+							'8','9','A','B',
+							'C','D','E','F'};
+			/*
+			一会查表会查到比较的数据。
+			数据一多，就先存储起来，在进行操作。
+			所以定义一个数组。 临时容器。
+			*/
+			char[] arr = new char[32];
+			int pos = arr.length;
+	
+			while(num!=0)
+			{
+				int temp = num & base;
+				arr[--pos] = chs[temp];
+				num  = num >>> offset;
+			}
+	
+			for(int x=pos ;x<arr.length; x++)
+			{
+				System.out.print(arr[x]);
+			}
+			System.out.println();
+	
+		}
+	
+	}
+
+
+
+
 ## 14-Java基础(查表法练习)
+
+
+code:
+
+	class ArrayTest4 
+	{
+		public static void main(String[] args) 
+		{
+			String week = getWeek(71);
+			System.out.println(week);
+		}
+		/*
+		使用查表法。
+		星期。
+		String s = "abc";
+		int x = 4;
+		*/
+		public static String getWeek(int num)
+		{
+	
+			if(num>7 || num<1)
+			{
+				return "错误的星期";
+			}
+			String[] weeks = {"","星期一","星期二","星期三","星期四","星期五","星期六","星期日"};
+	
+			return weeks[num];
+		}
+	
+	}
+
+
 
 --------------
 
