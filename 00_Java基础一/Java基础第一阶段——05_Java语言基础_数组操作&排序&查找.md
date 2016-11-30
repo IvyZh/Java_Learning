@@ -1,4 +1,4 @@
-# Java基础第一阶段——04_Java语言基础_for语句&函数&数组&if&while&switch&for语句
+# Java基础第一阶段——05_Java语言基础_数组操作&排序&查找
 
 * 学习视频：毕向东35天Java基础_毕向东
 * 录制时间：2012年2月19日
@@ -8,6 +8,9 @@
 
 ![](https://github.com/IvyZh/Java_Learning/blob/master/00_Java%E5%9F%BA%E7%A1%80%E4%B8%80/imgs/QQ%E6%88%AA%E5%9B%BE20161123114932.png)
  
+![](https://github.com/IvyZh/Java_Learning/blob/master/00_Java%E5%9F%BA%E7%A1%80%E4%B8%80/imgs/QQ%E6%88%AA%E5%9B%BE20161123114948.png)
+
+![](https://github.com/IvyZh/Java_Learning/blob/master/00_Java%E5%9F%BA%E7%A1%80%E4%B8%80/imgs/QQ%E6%88%AA%E5%9B%BE20161123114958.png)
 * 视频时长：1小时24分钟 + 1小时54分钟 + 1小时13分钟 
 
 
