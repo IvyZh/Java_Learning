@@ -1,6 +1,6 @@
-# Java基础第二阶段——01_html&标签
+# Java基础第二阶段——02_JavaWeb_cssl&js
 
-Tags ：Html 标签
+Tags ：Html CSS JS
 
 
 ---
@@ -10,10 +10,10 @@ Tags ：Html 标签
 * 录制时间：2015年4月14日
 * 视频目录：
 
-![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/%E5%B9%BF%E9%99%B5%E6%95%A3/imgs/QQ%E6%88%AA%E5%9B%BE20161123121121.png)
+![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/%E5%B9%BF%E9%99%B5%E6%95%A3/imgs/QQ%E6%88%AA%E5%9B%BE20161201004302.png)
 
   
-* 视频时长：4小时24分钟
+* 视频时长：4小时29分钟
 
 		章节 使用 # 
 		每日视频 ## 
