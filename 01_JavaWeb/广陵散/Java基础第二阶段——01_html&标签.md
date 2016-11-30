@@ -402,14 +402,297 @@ Tags ：Html 标签
 		- action： 提交到地址，默认提交到当前的页面，`<form action='01-hello.html'></form>`
 
 ## 15-表单标签二
+
+- `<form></form>`: 定义一个表单的范围
+	- 属性
+		- action： 提交到地址，默认提交到当前的页面，`<form action='01-hello.html'></form>`
+		- method: get和post，默认是get请求
+			- 面试题目： get和post区别
+			
+					1、get请求地址栏会携带提交的数据，post不会携带（请求体里面。在第七天时候讲http协议时候）
+					2、get请求安全级别较低，post较高
+					3、get请求数据大小的限制，post没有限制
+		- enctype：一般请求下不需要这个属性，做文件上传时候需要设置这个属性（第22天时候讲文件上传）
+
+- `<input type="image" src="图片路径"/>`：使用图片提交
+- `<input type="reset"/>`：重置按钮： 回到输入项的初始状态
+- `<input type="button" value=""/>` ：普通按钮(和明天讲js在一起使用的)
+
 ## 16-案例使用表单标签实现注册的页面
+
+![](https://github.com/IvyZh/Java_Learning/blob/master/01_JavaWeb/%E5%B9%BF%E9%99%B5%E6%95%A3/imgs/QQ%E6%88%AA%E5%9B%BE20161130233759.png)
+
+- 使用表格实现页面效果
+		- 超链接不想要他有效果 `href="#"`
+		- 如果表格里面的单元格没有内容， 使用空格作为占位符 `&nbsp`;
+		- 使用图片提交表单 `<input type="image" src="图片的路径"/>`
+
+
+Code:
+
+	<html>
+	 <head>
+	  <title>HTML示例</title>
+	 </head>
+	 <body>
+		<h2>注册传智播客的账号</h2>
+		<form action="01-hello.html">
+		<table  width="100%">
+			<tr>
+				<td align="right">注册邮箱：</td>
+				<td><input type="text" name="mail"/></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>你可以使用 <a href="#">账号</a>注册或者使用 <a href="#">手机号</a>注册</td>
+			</tr>
+			<tr>
+				<td align="right">创建密码：</td>
+				<td><input type="password" name="pwd"/></td>
+			</tr>
+			<tr>
+				<td align="right">真实姓名：</td>
+				<td><input type="text" name="realname"/></td>
+			</tr>
+			<tr>
+				<td align="right">性别：</td>
+				<td><input type="radio" name="sex" value="nv"/>女 <input type="radio" name="sex" value="nan"/>男</td>
+			</tr>
+	
+			<tr>
+				<td  align="right" >生日：</td>
+				<td>
+					<select name="year">
+						<option value="1945">1945</option>
+						<option value="1931">1931</option>
+						<option value="1949">1949</option>
+					</select>年
+					<select name="month">
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>月
+					<select name="day">
+						<option value="30">30</option>
+						<option value="10">10</option>
+						<option value="25">25</option>
+					</select>日
+	
+				</td>
+			</tr>
+	
+			<tr>
+				<td  align="right">我现在：</td>
+				<td>
+					<select name="now">
+						<option value="study">我正在上学</option>
+						<option value="work">我已经工作</option>
+					</select>
+	
+				</td>
+			</tr>
+	
+			<tr>
+				<td>&nbsp;</td>
+				<td><img src="verycode.gif"/> <a href="#">看不清换一张?</a></td>
+			</tr>
+	
+			<tr>
+				<td align="right">验证码：</td>
+				<td><input type="text" name="verycode"/></td>
+			</tr>
+	
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="image" src="btn_reg.gif"/></td>
+			</tr>
+		</table>
+	</form>
+	 </body>
+	</html>
+
+
 ## 17-其他标签的使用
+
+	b : 加粗
+	s ：删除线
+	u ：下划线
+	i ：斜体
+	
+	pre ：原样输出
+	
+	sub : 下标
+	sup : 上标
+
+	p ：段落标签 比br标签多一行
+	
+	====明天css时候一直使用
+	div ：自动换行
+	span：在一行显示,不会换行
+
+
 ## 18-html的头标签的使用
-## 19-框架标签的使用
+
+
+- html两部分组成 head和body
+	- 在head里面的标签就是头标签
+		- title标签：表示在标签上显示的内容
+		- `<meta>`标签：设置页面的一些相关内容，早期的关键词
+			- `<meta name="keywords" content="毕姥爷，熊出没，刘翔">`
+			- `<meta http-equiv="refresh" content="3;url=01-hello.html"/>`:3秒中定时跳转
+		- base标签：设置超链接的基本设置（可以统一设置超链接的打开方式 
+			-  `<base target="_blank"/>`
+		- link标签：引入外部文件
+			-  明天css，可以使用link标签引入css文件
+
+## 19-框架标签的使用(会用
+- 其实这个是过时的，但是还是要了解下，会用就可以
+	- 工具：HTML Help
+
+	* `<frameset>`
+		- rows:按照行进行划分
+			* `<frameset rows="80,*">`
+
+		- cols:按照列进行划分
+			* `<frameset cols="80,*">`
+	* `<frame>`
+		- 具体显示的页面
+			- `<frame name="lower_left" src="b.html"> `
+
+> 使用框架标签时候，不能写在body里面，使用了框架标签，需要把body去掉
+
+Code:
+
+	<html>
+	 <head>
+	  <title>HTML示例</title>
+	 </head>
+		<frameset rows="80,*">
+				<frame name="top" src="a.html"/>
+	
+				<frameset cols="80,*">
+					<frame name="left" src="b.html"/>
+					<frame name="right"/>
+				</frameset>
+				
+		</frameset>
+	
+	</html>
+
+b.html
+
+	<html>
+	 <head>
+	  <title>HTML示例</title>
+	 </head>
+	 <body>
+	
+		<h1>bbbbbbb</h1>
+	
+		<a href="01-hello.html" target="right">超链接1</a>
+		<a href="02-标题和水平线和特殊字符.html" target="right">超链接2</a>
+		<a href="03-列表标签.html" target="right">超链接3</a>
+	 </body>
+	</html>
+
+分析：
+
+	<frameset rows="80,*">                        //把页面划分成上下两部分 
+	     <frame name="top" src="a.html">             //上面页面
+	
+		<frameset cols="150,*">                     //把下面部分划分成左右两部分
+			<frame name="lower_left" src="b.html">  //左边的页面
+			<frame name="lower_right" src="c.html"> //右边的页面
+		</frameset> 
+	</frameset> 
+
 ## 20-html文件中文乱码
+
+* EditPlus
+	* 备份去掉
+	* Html模板
+	* 乱码：使用系统默认编码就不会出现中文乱码的情况
+
+
+> 扩展知识：
+
+	a标签的扩展（了解）
+		- 百度是网络资源
+		- 当a标签里面访问网络资源时候，必须要加一个协议 http：表示一个网络的公共协议，
+		 如果加上http协议之后，自动识别访问资源是一个网络资源
+	
+		- 当浏览器里面找到相关协议，首先看这个协议是不是公共协议http。
+		如果不是公共协议，会去本地电脑找支持这个协议的应用程序。
+
+
 ## 21-今天内容的总结
 
+	1、html操作思想（****）
+		* 使用标签把要操作的数据包起来，通过修改标签的属性值，来实现标签内数据样式的变化
+	2、font标签 属性：size 取值范围 1-7  color：英文单词，十六进制数 #ffffff
+	3、标题标签 <h1></h1>.....<h6></h6> : 从h1到h6越来越小，自动换行
+	4、注释 <!-- html的注释 -->
 
+	5、列表标签
+		** <dl> <dt></dt> <dd></dd></dl>
+		** 有序 <ol><li></li></ol>
+		** 无序 <ul><li></li></ul>
+	
+	6、图像标签(******)
+		<img src="图片的路径" width="" height="" alt=""/>
+		**  alt:浏览器兼容性很差
+	
+	7、路径（相对路径）(****)
+		** 在同一级目录 ：直接写
+		** 在下一层目录： images/1.jpg
+		** 在上层目录： ../
+	
+	8、超链接标签（*****）
+		<a href="路径">显示在页面上的内容</a>
+		- 打开方式 target="_self  _ blank"
+		- 默认是在当前页面打开
+	
+	9、表格标签（*****）
+		<table>
+			<tr>
+				<td></td>
+				<th></th>  //加粗和居中
+			</tr>
+		</table>
+		- 技巧：先数有多少行，数每行里面有多少个单元格
+	
+	10、表单标签（*** 今天最重要的标签***）
+		* <form></form>: 
+			- action: 提交到地址
+			- method：提交方式 ：常用的有两种 get和post
+			- get和post区别
+
+			- enctype属性（上传时候使用）
+		* 输入项
+			* 输入项里面写name属性
+			* 普通输入项 <input type="text"/>
+			* 密码：password
+			* 单选框：radio
+			* 复选框：checkbox
+			* 下拉框
+				<select name="">
+					<option value=""></option>
+				</select>
+			* 文本域
+				<textarea cols="" rows="" name=""></textarea>
+			
+			* 文件 file
+
+			* 提交按钮 submit
+			* 重置  reset
+			* 使用图片提交 <input type="image" src=""/>
+
+			* 隐藏项 hidden
+			* 普通按钮 button
+		
+	11、div和span(******)
+
+	12、框架标签（会用）
 ---
 
 Day01 End.
