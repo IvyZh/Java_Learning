@@ -202,7 +202,7 @@ Comparable<T>
 			sop(o)
 		}
 		
-		public static <W> void print22(W o){// ok
+		public static <W> void print2(W o){// ok
 			sop(o)
 		}
 	}
@@ -240,3 +240,68 @@ code2:
 
 
 ## 泛型限定
+
+	public static void main(String[] args){
+	
+		ArrayList<String> al  = new ArrayList<String>();
+		...
+		ArrayList<Integer> al1  = new ArrayList<Integer>();
+		...
+		
+		print(al);
+		print(al1);
+	}
+	
+	
+	public static void print(ArrayList<?> al){
+		
+		Iterator<?> it = al.iterator();
+		while(it.hasNext()){
+			sop(it.next());
+		}
+	
+	}
+
+
+	public static <T> void print(ArrayList<T> al){
+		
+		Iterator<T> it = al.iterator();
+		while(it.hasNext()){
+			// T t = it.next(); 区别就是可以操作
+			sop(it.next());
+		}
+	
+	}
+
+> ?的应用:泛型限定
+
+class Person{
+
+}
+
+class Student extends Person{
+
+}
+
+
+main(){
+	ArrayList<Student> al = new ArrayList<Student>();
+	...
+	print(al)；
+}
+
+public static void print(ArrayList<Person> al){//ArrayList<Person> al = new ArrayList<Student>();//error
+	Iterator<Person> it = al.iterator();
+}
+
+public static void print(ArrayList<? extends Person> al){//ok
+	Iterator<? extends Person> it = al.iterator();
+	...
+}
+
+
+> ?通配符，可以理解为占位符
+
+> 泛型的限定
+> ? extends E : 可以接收E类型或者E的子类型。向上限定
+> ? super E: 可以接收E类型或者E的父类型。向下类型
