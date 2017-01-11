@@ -275,29 +275,29 @@ code2:
 
 > ?的应用:泛型限定
 
-class Person{
-
-}
-
-class Student extends Person{
-
-}
-
-
-main(){
-	ArrayList<Student> al = new ArrayList<Student>();
-	...
-	print(al)；
-}
-
-public static void print(ArrayList<Person> al){//ArrayList<Person> al = new ArrayList<Student>();//error
-	Iterator<Person> it = al.iterator();
-}
-
-public static void print(ArrayList<? extends Person> al){//ok
-	Iterator<? extends Person> it = al.iterator();
-	...
-}
+	class Person{
+	
+	}
+	
+	class Student extends Person{
+	
+	}
+	
+	
+	main(){
+		ArrayList<Student> al = new ArrayList<Student>();
+		...
+		print(al)；
+	}
+	
+	public static void print(ArrayList<Person> al){//ArrayList<Person> al = new ArrayList<Student>();//error
+		Iterator<Person> it = al.iterator();
+	}
+	
+	public static void print(ArrayList<? extends Person> al){//ok
+		Iterator<? extends Person> it = al.iterator();
+		...
+	}
 
 
 > ?通配符，可以理解为占位符
