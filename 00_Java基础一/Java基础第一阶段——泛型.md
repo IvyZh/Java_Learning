@@ -8,8 +8,8 @@
 	
 	Iterator it = al.iterator();
 	while(it.hasNext()){
-		String s = (String) s.next();
-		sop(s);// 编译ok，运行报错：class cast Exception
+		String s = (String) s.next();// 编译ok，运行报错：class cast Exception
+		sop(s);
 	}
 
 问题：如何在编译的时候就可以检查呢？
@@ -18,12 +18,12 @@ JDK1.5之后出现的新特性——泛型，用来解决安全问题，是一�
 
 定义集合的时候就要明确类型。
 
-ArrayList<String> al = new ArrayList<String>();//定义了一个容器，这个容器要存放的对象类型是String。将运行时出现的问题ClassCastException转移到了编译时期，方便于程序员解决问题，让运行时期问题减少，安全。
+	ArrayList<String> al = new ArrayList<String>();//定义了一个容器，这个容器要存放的对象类型是String。将运行时出现的问题ClassCastException转移到了编译时期，方便于程序员解决问题，让运行时期问题减少，安全。
 
 	Iterator<String> it = al.iterator();// 迭代器也要使用泛型就可以直接取出字符串了。
 	while(it.hasNext()){
 		String s =  s.next();
-		sop(s);// 编译ok，运行报错：class cast Exception
+		sop(s); 
 	}
 
 
